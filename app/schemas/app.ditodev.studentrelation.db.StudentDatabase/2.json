@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "6329dd5d4b76df0e842c3a19a1491295",
+    "identityHash": "46d3ca9e65ee43340d761de773ba0654",
     "entities": [
       {
         "tableName": "Student",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`studentId` INTEGER NOT NULL, `name` TEXT NOT NULL, `univId` INTEGER NOT NULL, `graduated` INTEGER DEFAULT false, PRIMARY KEY(`studentId`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`studentId` INTEGER NOT NULL, `name` TEXT NOT NULL, `univId` INTEGER NOT NULL, `graduate` INTEGER DEFAULT false, PRIMARY KEY(`studentId`))",
         "fields": [
           {
             "fieldPath": "studentId",
@@ -27,8 +27,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "graduated",
-            "columnName": "graduated",
+            "fieldPath": "graduate",
+            "columnName": "graduate",
             "affinity": "INTEGER",
             "notNull": false,
             "defaultValue": "false"
@@ -99,7 +99,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6329dd5d4b76df0e842c3a19a1491295')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '46d3ca9e65ee43340d761de773ba0654')"
     ]
   }
 }
