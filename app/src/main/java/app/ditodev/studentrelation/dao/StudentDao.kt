@@ -5,7 +5,9 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.RawQuery
 import androidx.room.Transaction
+import androidx.sqlite.db.SupportSQLiteQuery
 import app.ditodev.studentrelation.entity.Course
 import app.ditodev.studentrelation.entity.Student
 import app.ditodev.studentrelation.entity.StudentAndUniversity
@@ -23,8 +25,8 @@ interface StudentDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertCourse(course: List<Course>)
 
-    @Query("SELECT * from student")
-    fun getAllStudent(): LiveData<List<Student>>
+    @RawQuery(observedEntities = [Student::class])
+    fun getAllStudent(query: SupportSQLiteQuery): LiveData<List<Student>>
 
     @Transaction
     @Query("SELECT * FROM student")

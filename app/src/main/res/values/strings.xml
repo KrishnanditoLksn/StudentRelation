@@ -4,4 +4,8 @@
     <string name="single_table">Single Table\n</string>
     <string name="one_to_many">One To Many\n</string>
     <string name="many_to_many">Many To Many</string>
+    <string name="ascending">A-Z</string>
+    <string name="descending">Z-A\n</string>
+    <string name="random">Random</string>
+    <string name="sort">Sort</string>
 </resources>
